@@ -1,0 +1,66 @@
+version: '3'
+
+volumes:
+ data_wp: {}
+ data_db: {}
+  #imac에서는 아래와 같이 설절할 것!
+# volumes:
+#   data_wp:
+#       driver: local
+#       driver_opts:
+#           type: 'none'
+#           o: 'bind'
+#           device: 'home/jeson/data/wp'
+#   data_db:
+#       driver: local
+#       driver_opts:
+#           type: 'none'
+#           o: 'bind'
+#           device: 'home/jeson/data/db'
+
+services:
+  nginx:
+    container_name: srcs_nginx
+    depends_on:
+      - wordpress
+    build: ./requirements/nginx
+    restart: always
+    volumes:
+      - data_wp:/var/www/html
+    ports:
+      - "443:443"
+    networks:
+      - jesonworld
+    tty: true
+
+  wordpress:
+    container_name: srcs_wordpress
+    depends_on:
+      - mariadb
+    build: ./requirements/wordpress
+    restart: always
+    volumes:
+      - data_wp:/var/www/html
+    expose:
+      - "9000"
+    networks:
+      - jesonworld
+    env_file: .env
+    tty: true
+
+  mariadb:
+    container_name: srcs_mariadb
+    build: ./requirements/mariadb
+    restart: always
+    volumes:
+      - data_db:/var/lib/mysql
+    expose:
+      - "3306"
+    networks:
+      - jesonworld
+    env_file: .env
+    tty: true
+
+networks:
+  jesonworld:
+    driver: bridge

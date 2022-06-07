@@ -1,9 +1,7 @@
 NAME = inception
 
-YML = docker-compose -f srcs/docker-compose.yml
+YML = docker-compose
 SRC_DIR = src
-
-
 
 RM = rm
 RMFLAGS = -f
@@ -11,7 +9,7 @@ RMFLAGS = -f
 GREEN = \033[32m
 PURPLE = \033[35m
 MINT = \033[36m
-RED = \033[31m 
+RED = \033[31m
 BLINK = \033[5m
 BOLD = \033[1m
 BACKGRAY = \033[100m
@@ -27,7 +25,7 @@ make :
 stop :
 	@echo "${PURPLE}[${RED} docker stop ${PURPLE} : stop all container.]"
 	@$(YML) down
-	@echo "${PURPLE}->kill every container.." 
+	@echo "${PURPLE}->kill every container.."
 	@echo "${PURPLE}->close all container's door..."
 	@echo "${MINT}stopping Done."
 
@@ -39,11 +37,6 @@ ls :
 log :
 	@echo "${PURPLE}[${RED} Running container Logs ${PURPLE}]"
 	@$(YML) logs
-	@($(RM) $(RMFLAGS) $(NAME))
-
-build :
-	@echo "${PURPLE}[${RED} Build all images ${PURPLE}]"
-	@$(YML) build
 	@($(RM) $(RMFLAGS) $(NAME))
 
 re :
