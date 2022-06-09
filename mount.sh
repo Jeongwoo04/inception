@@ -5,4 +5,3 @@
 sudo mkdir -p /home/jeson/data
 sudo mkdir -p /home/jeson/data/wordpress
 sudo mkdir -p /home/jeson/data/mariadb
-1
