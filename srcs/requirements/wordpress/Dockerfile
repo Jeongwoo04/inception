@@ -22,7 +22,7 @@ RUN	cd /var/www &&\
 COPY	./conf/www.conf	/etc/php/7.3/fpm/pool.d
 
 # wordpress 로 /var/www/wordpress 소유권 주기
-RUN	chown -R www-data:www-data /var/www/wordpress
+RUN	chown -R user:user /var/www/wordpress
 
 # wordpress client 설치 후 권한 설정 및 파일 옮기기
 RUN	curl -O https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phar/wp-cli.phar &&\
