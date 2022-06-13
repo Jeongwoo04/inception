@@ -22,7 +22,6 @@ RUN	cd /var/www &&\
 COPY	./conf/www.conf	/etc/php/7.3/fpm/pool.d
 
 # wordpress 로 /var/www/wordpress 소유권 주기
-RUN chmod 777 /var/www/wordpress/
 RUN	chown -R www-data:www-data /var/www/wordpress
 
 # wordpress client 설치 후 권한 설정 및 파일 옮기기
