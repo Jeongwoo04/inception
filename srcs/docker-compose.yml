@@ -7,7 +7,8 @@ services:
       - 3306
     networks:
       - inception
-    volumes: mariadb:/var/lib/mysql
+    volumes:
+      - mariadb:/var/lib/mysql
     env_file: .env
     restart: on-failure
 
@@ -17,9 +18,11 @@ services:
       - 9000
     networks:
       - inception
-    volumes: wordpress:/var/www/wordpress
+    volumes:
+      - wordpress:/var/www/wordpress
     env_file: .env
-    depends_on: mariadb
+    depends_on:
+      - mariadb
     restart: on-failure
 
   nginx:
@@ -28,9 +31,11 @@ services:
       - 443:443
     networks:
       - inception
-    volumes: wordpress:/var/www/wordpress
+    volumes:
+      - wordpress:/var/www/wordpress
     env_file: .env
-    depends_on: wordpress
+    depends_on:
+      - wordpress
     restart: on-failure
 
 networks:
