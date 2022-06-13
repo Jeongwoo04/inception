@@ -13,6 +13,9 @@ server {
 
 	# server root directory
 	index index.php;
+	location / {
+		index index.html index.htm index.html inde.php;
+	}
 	root /var/www/wordpress;
 
 	location ~ \.php$ {
