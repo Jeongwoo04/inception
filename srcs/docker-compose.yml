@@ -34,13 +34,13 @@ networks:
 volume:
   wordpress:
     name: wordpress
-      driver_opts:
-        o: bind
-        type: none
-        device: /home/jeson/data/wordpress/
+    driver_opts:
+      o: bind
+      type: none
+      device: /home/jeson/data/wordpress/
   mariadb:
     name: mariadb
-      driver_opts:
-        o: bind
-        type: none
-        devie: /home/jeson/data/wordpress/
+    driver_opts:
+      o: bind
+      type: none
+      devie: /home/jeson/data/wordpress/
