@@ -54,4 +54,4 @@ volumes:
     driver_opts:
       o: bind
       type: none
-      devie: /home/jeson/data/wordpress/
+      device: /home/jeson/data/wordpress/
