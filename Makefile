@@ -19,7 +19,7 @@ stop:
 
 clean: stop
 	docker-compose -f $(YML_DIR) down;
-	docker volume rm $(docker volume ls -q);
+	docker volume rm wordpress mairadb;
 	sudo rm -rf $(HOME_DIR)/data;
 
 # ps : 컨테이너 목록 표시
