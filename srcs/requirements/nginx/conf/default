@@ -12,11 +12,10 @@ server {
 	ssl_certificate_key /etc/ssl/private/localhost_p.key;
 
 	# server root directory
-	index index.php;
 	location / {
-		index index.html index.htm index.html inde.php;
+		root /var/www/wordpress;
+		index index.php;
 	}
-	root /var/www/wordpress;
 
 	location ~ \.php$ {
 		# fastcgi_pass : 위치를 명시해 요청이 FastCGI서버에 전달되게 지정
