@@ -1,6 +1,6 @@
 server {
-	listen 443; # 80번 포트로 서버 오픈 (ipv4)
-	listen [::]:443; # 80번 포트로 서버 오픈 (ipv6)
+	listen 443 ssl; # 80번 포트로 서버 오픈 (ipv4)
+	listen [::]:443 ssl; # 80번 포트로 서버 오픈 (ipv6)
 
 	# 설정할 도메인/IP 지정
 	server_name jeson.42.fr;
