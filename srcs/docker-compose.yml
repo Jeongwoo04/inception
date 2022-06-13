@@ -49,12 +49,12 @@ volumes:
   wordpress:
     name: wordpress
     driver_opts:
+      device: /home/jeson/data/wordpress/
       o: bind
       type: none
-      device: /home/jeson/data/wordpress/
   mariadb:
     name: mariadb
     driver_opts:
+      device: /home/jeson/data/wordpress/
       o: bind
       type: none
-      device: /home/jeson/data/wordpress/
