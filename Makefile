@@ -19,8 +19,7 @@ stop:
 
 clean: stop
 	docker-compose -f $(YML_DIR) down;
-	@docker volume rm $$(docker volume ls -q);
-	sudo rm -rf $(HOME_DIR)/data;
+	./rm_dock.sh
 
 # ps : 컨테이너 목록 표시
 ps:
