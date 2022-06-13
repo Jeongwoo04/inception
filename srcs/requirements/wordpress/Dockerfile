@@ -11,6 +11,7 @@ RUN	apt-get -y install php7.3\
 	curl
 
 # wordpress 다운 & -P 지정한 장소에 설치
+RUN mkdir -p /var/www
 RUN	wget https://wordpress.org/wordpress-5.9.2.tar.gz -P /var/www
 
 # wordpress 폴더로 이동 후 알집 풀고 정리

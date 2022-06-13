@@ -15,8 +15,6 @@ fi
 # -F Force to stay in foreground and ignore daemonize option from configuration file.
 mkdir ./run/php/
 /usr/sbin/php-fpm7.3 -F
-sudo chmod 755 /var
-sudo chmod 755 /var/www
 
 # user 확인하기
 # wp user list --allow-root
