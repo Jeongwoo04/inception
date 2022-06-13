@@ -45,12 +45,4 @@ cd /mnt/cdrom
 # Guest Image의 실행 파일을 직접 실행 (nox11은 xterm 화면이 나타나지 않도록 설정)
 sudo sh ./VBoxLinuxAdditions.run —nox11
 # 재부팅
-sudo shutdown -r now
-# 결과 확인
-lsmod | grep vboxguest
-su -
-# 사용자를 sudo 그룹에 추가
-sudo usermod -a -G sudo jeson
-# 사용자를 root 그룹에 추가
-sudo usermod -a -G root jeson
-sudo visudo
+# sudo shutdown -r now
