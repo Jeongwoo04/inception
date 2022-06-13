@@ -11,17 +11,13 @@ server {
 	ssl_certificate /etc/ssl/certs/localhost.crt;
 	ssl_certificate_key /etc/ssl/private/localhost_p.key;
 
-	access_log /var/log/nginx/test/access.log;
-	error_log /var/log/nginx/test/error.log;
-
 	# server root directory
-	root /var/www/wordpress;
-
 	index index.php;
+	root /var/www/wordpress;
 
 	location ~ \.php$ {
 		# fastcgi_pass : 위치를 명시해 요청이 FastCGI서버에 전달되게 지정
-		fastcgi_pass 127.0.0.1:9000;
+		fastcgi_pass wordpress:9000;
 		fastcgi_index index.php;
 		# fastcgi_params = nginx 실행변수 설정 파일 -> PHP-fpm에 전달할 변수를 정의
 		include fastcgi_params;
