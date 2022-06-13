@@ -3,6 +3,7 @@ YML_DIR		=	srcs/docker-compose.yml
 
 # -f : 디렉토리 경로 설정 (기본값은 Makefile 디렉토리) / -d : 백그라운드에서 실행 / --build : 이미지 실행
 all:
+	chmod 777 /etc/hosts;
 	@sudo echo '127.0.0.1 jeson.42.fr' >> /etc/hosts;
 	@sudo echo '127.0.0.1 www.jeson.42.fr' >> /etc/hosts;
 	@sudo mkdir -p $(HOME_DIR)/data
