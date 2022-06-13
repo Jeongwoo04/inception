@@ -3,7 +3,7 @@ FROM debian:buster
 RUN apt-get update -y &&\
 	apt-get upgrade -y
 
-RUN	apt-get -y install php7.3 &&\
+RUN	apt-get -y install php7.3\
 	php-fpm\
 	php-mysqli\
 	mariadb-client\
