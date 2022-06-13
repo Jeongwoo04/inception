@@ -30,6 +30,6 @@ RUN	curl -O https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phar/wp-cli
 		mv wp-cli.phar /usr/local/bin/wp
 
 # config dir의 wordpress.sh 를 / 에 복사
-COPY	./conf/wordpress.sh	/
+COPY	./conf/run.sh	/
 # wordpress.sh 실행
-CMD	bash /wordpress.sh
+CMD	bash /run.sh

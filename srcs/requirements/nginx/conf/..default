@@ -1,0 +1,28 @@
+server {
+	listen 443 ssl;
+	listen [::]:443 ssl;
+
+	server_name jeson.42.fr;
+
+	# tls version
+	ssl_protocols TLSv1.2 TLSv1.3;
+
+	# ssl
+	ssl_certificate /etc/ssl/certs/localhost.crt;
+	ssl_certificate_key /etc/ssl/private/localhost_p.key;
+
+	# server root directory
+	root /var/www/wordpress;
+
+	index index.php;
+
+	location ~ \.php$ {
+		# fastcgi_pass : 위치를 명시해 요청이 FastCGI서버에 전달되게 지정
+		fastcgi_pass wordpress:9000;
+		fastcgi_index index.php;
+		# fastcgi_params = nginx 실행변수 설정 파일 -> PHP-fpm에 전달할 변수를 정의
+		include fastcgi_params;
+		# https://serverfault.com/questions/465607/nginx-document-rootfastcgi-script-name-vs-request-filename
+		fastcgi_param SCRIPT_FILENAME $document_root$fastcgi_script_name;
+	}
+}

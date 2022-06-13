@@ -18,3 +18,4 @@ mkdir ./run/php/
 
 # user 확인하기
 # wp user list --allow-root
+dd
