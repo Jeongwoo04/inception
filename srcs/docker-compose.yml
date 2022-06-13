@@ -3,7 +3,8 @@ version : '3'
 services:
   mariadb:
     build: ./requirements/mariadb
-    expose: 3306
+    expose:
+      - 3306
     networks:
       - inception
     volumes: mariadb:/var/lib/mysql
@@ -12,7 +13,8 @@ services:
 
   wordpress:
     build: ./requirements/wordpress
-    expose: 9000
+    expose:
+      - 9000
     networks:
       - inception
     volumes: wordpress:/var/www/wordpress
@@ -22,7 +24,8 @@ services:
 
   nginx:
     build: ./requirements/nginx
-    ports: 443:443
+    ports:
+      - 443:443
     networks:
       - inception
     volumes: wordpress:/var/www/wordpress
