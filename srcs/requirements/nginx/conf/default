@@ -3,7 +3,7 @@ server {
 	listen [::]:443; # 80번 포트로 서버 오픈 (ipv6)
 
 	# 설정할 도메인/IP 지정
-	server_name $DOMAIN_NAME;
+	server_name ${DOMAIN_NAME};
 
 	# TLS version
 	ssl_protocols TLSv1.2 TLSv1.3;
