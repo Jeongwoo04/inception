@@ -42,7 +42,7 @@ networks:
   inception:
     driver: bridge
 
-volume:
+volumes:
   wordpress:
     name: wordpress
     driver_opts:
