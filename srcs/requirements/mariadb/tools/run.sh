@@ -13,7 +13,7 @@ if [ ! -d /var/lib/mysql/$WP_DB_NAME ]; then
 	mysql -e "ALTER USER 'root'@'localhost' IDENTIFIED BY '$MYSQL_ROOT_PW';"
 	# 변경사항 적용
 	mysql -e "FLUSH PRIVILEGES;"
-	mysqladmin -u root -p$MYSQL_ROOT_PW shutdown
+	service mysql stop
 fi
 
 sleep 3
