@@ -6,7 +6,6 @@ all:
 	@sudo chmod 777 /etc/hosts;
 	@sudo echo '127.0.0.1 jeson.42.fr' >> /etc/hosts;
 	@sudo echo '127.0.0.1 www.jeson.42.fr' >> /etc/hosts;
-	@sudo mkdir -p $(HOME_DIR)/data
 	@sudo mkdir -p $(HOME_DIR)/data/wordpress
 	@sudo mkdir -p $(HOME_DIR)/data/mariadb
 	docker-compose -f $(YML_DIR) up -d --build
