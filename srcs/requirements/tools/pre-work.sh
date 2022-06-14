@@ -1,9 +1,7 @@
 #!/bin/bash
 
-HOME_DIR = /home/jeson
-
-sudo mkdir -p ${HOME_DIR}/data/wordpress
-sudo mkdir -p ${HOME_DIR}/data/mariadb
+mkdir -p /home/jeson/data/wordpress
+mkdir -p /home/jeson/data/mariadb
 
 if [ ! -e /etc/pre-work.txt ]; then
 	touch /etc/pre-work.txt
