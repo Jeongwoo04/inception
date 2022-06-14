@@ -5,7 +5,7 @@ if [ ! -e /var/www/wordpress/wp-config.php ]; then
 	chown -R www-data:www-data /var/www/wordpress
 
 	wp config create --allow-root --dbname=$WP_DB_NAME --dbuser=$DB_ADMIN_NAME\
-					--dbpass=$DB_ADMIN_PASSWORD --dbhost=mariadb:3306 --path='/var/www/wordpress'; do
+					--dbpass=$DB_ADMIN_PASSWORD --dbhost=mariadb:3306 --path='/var/www/wordpress'
 	# wordpress 세팅
 	wp core install --allow-root --url=$DOMAIN_NAME --title=$WP_TITLE --admin_user=$WP_USER1_NAME\
 					--admin_password=$WP_USER1_PASSWORD --admin_email=$WP_EMAIL1 --path='/var/www/wordpress'
