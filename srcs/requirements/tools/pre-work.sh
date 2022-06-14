@@ -2,10 +2,9 @@
 
 HOME_DIR = /home/jeson
 
-if [ ! -e ${HOME_DIR}/data/ ]; then
-	sudo mkdir -p ${HOME_DIR}/data/wordpress
-	sudo mkdir -p ${HOME_DIR}/data/mariadb
-fi
+sudo mkdir -p ${HOME_DIR}/data/wordpress
+sudo mkdir -p ${HOME_DIR}/data/mariadb
+
 if [ ! -e /etc/pre-work.txt ]; then
 	touch /etc/pre-work.txt
 	sudo chmod 777 /etc/hosts;
