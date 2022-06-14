@@ -10,4 +10,4 @@ COPY	conf/50-server.cnf	/etc/mysql/mariadb.conf.d/
 COPY	./tools/run.sh	/run.sh
 
 # 복사한 run 실행
-CMD	bash /run.sh
+CMD	./run.sh

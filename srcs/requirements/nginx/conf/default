@@ -9,13 +9,10 @@ server {
 
 	# ssl
 	ssl_certificate /etc/ssl/certs/localhost.crt;
-	ssl_certificate_key /etc/ssl/private/localhost_p.key;
+	ssl_certificate_key /etc/ssl/private/localhost.key;
 
-	# server root directory
-	location / {
-		root /var/www/wordpress;
-		index index.php;
-	}
+	root /var/www/wordpress;
+	index index.php;
 
 	location ~ \.php$ {
 		# fastcgi_pass : 위치를 명시해 요청이 FastCGI서버에 전달되게 지정
