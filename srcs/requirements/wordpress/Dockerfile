@@ -11,9 +11,9 @@ RUN	apt-get -y install wget
 RUN	apt-get -y install curl
 
 # wordpress client 설치 후 권한 설정 및 파일 옮기기
-RUN	curl -O https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phar/wp-cli.phar &&\
-		chmod +x wp-cli.phar &&\
-		mv wp-cli.phar /usr/local/bin/wp
+RUN	curl -O https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phar/wp-cli.phar
+RUN	chmod +x wp-cli.phar
+RUN	mv wp-cli.phar /usr/local/bin/wp
 
 # 설정한 config file 복사
 COPY	./conf/www.conf	/etc/php/7.3/fpm/pool.d

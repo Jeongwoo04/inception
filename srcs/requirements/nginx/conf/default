@@ -15,7 +15,6 @@ server {
 	index index.php;
 
 	location ~ \.php$ {
-		# fastcgi_pass : 위치를 명시해 요청이 FastCGI서버에 전달되게 지정
 		fastcgi_pass wordpress:9000;
 		fastcgi_index index.php;
 		# fastcgi_params = nginx 실행변수 설정 파일 -> PHP-fpm에 전달할 변수를 정의
