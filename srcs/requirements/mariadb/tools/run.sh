@@ -15,13 +15,13 @@ if [ ! -d /var/lib/mysql/$WP_DB_NAME ]; then
 	mysql -e "FLUSH PRIVILEGES;"
 	service mysql stop
 fi
-
-cd /var/run
-mkdir mysqld
-chown mysql mysqld
-chgrp mysql mysqld
-systemctl restart mysql
-
+if [ -d /var/lib/mysql/$WP_DB_NAME ]; then
+	cd /var/run
+	mkdir mysqld
+	chown mysql mysqld
+	chgrp mysql mysqld
+	systemctl restart mysql
+fi
 # sleep 3
 # mariadb foreground 실행 / background로 실행은 & 옵션 사용
 exec mysqld_safe
