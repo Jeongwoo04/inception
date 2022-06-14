@@ -1,10 +1,10 @@
 #!/bin/bash
 #
 	### su -
-# git 설치
-	### sudo apt-get install -y git
 # sudo 설치
 	### apt-get install -y sudo
+# git 설치
+	### sudo apt-get install -y git
 # Repository 인덱스 업데이트
 apt-get update
 # 패키지 관리자가 https를 이용할 수 있도록 설정
