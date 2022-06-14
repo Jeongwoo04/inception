@@ -1,8 +1,12 @@
 #!/bin/bash
+#
+	### su -
+# git 설치
+	### sudo apt-get install -y git
+# sudo 설치
+	### apt-get install -y sudo
 # Repository 인덱스 업데이트
 apt-get update
-# sudo 설치
-apt-get install -y sudo
 # 패키지 관리자가 https를 이용할 수 있도록 설정
 sudo apt-get install -y apt-transport-https
 # SSL 통신이 가능하도록 CA (Certificate Authorities)로부터 인증서를 획득
@@ -11,8 +15,6 @@ sudo apt-get install -y ca-certificates
 sudo apt-get install -y curl
 # Repository를 추가 및 삭제할 수 있도록 설정하는 패키지
 sudo apt-get install -y software-properties-common
-# git 설치
-sudo apt-get install -y git
 # make 설치
 sudo apt-get install -y make
 # vim 설치
@@ -45,5 +47,8 @@ sudo chmod +x /usr/local/bin/docker-compose
 sudo su -c 'printf "{\n\t\"live-restore\": true\n}" > /etc/docker/docker.json'
 # 도커 서비스 재시작
 sudo systemctl restart docker
-# 재부팅
-# sudo shutdown -r now
+# 사용자를 sudo root docker 그룹에 추가
+sudo usermod -a -G sudo jeson
+sudo usermod -a -G root jeson
+sudo usermod -a -G docker jeson
+sudo visudo
