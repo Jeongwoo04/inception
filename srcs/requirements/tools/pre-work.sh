@@ -2,9 +2,9 @@
 
 HOME_DIR = /home/jeson
 
-if [ ! -e $(HOME_DIR)/data/ ]; then
-	sudo mkdir -p $(HOME_DIR)/data/wordpress
-	sudo mkdir -p $(HOME_DIR)/data/mariadb
+if [ ! -e ${HOME_DIR}/data/ ]; then
+	sudo mkdir -p ${HOME_DIR}/data/wordpress
+	sudo mkdir -p ${HOME_DIR}/data/mariadb
 fi
 if [ ! -e /etc/pre-work.txt ]; then
 	touch /etc/pre-work.txt

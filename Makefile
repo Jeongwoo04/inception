@@ -18,7 +18,7 @@ down:
 
 clean: down
 	docker system prune -af
-	docker volume rm $(docker volume ls -q)
+	docker volume rm $$(docker volume ls -q)
 	sudo rm -rf /home/jeson/data
 
 # ps : 컨테이너 목록 표시
