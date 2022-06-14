@@ -14,7 +14,7 @@ if [ ! -e /var/www/wordpress/wp-config.php ]; then
 fi
 
 # -F Force to stay in foreground and ignore daemonize option from configuration file.
-mkdir ./run/php/
+mkdir -p /run/php/
 /usr/sbin/php-fpm7.3 -F
 
 # user 확인하기

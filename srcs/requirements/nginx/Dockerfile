@@ -1,10 +1,10 @@
 FROM debian:buster
 
-RUN		apt-get -y update &&\
-		apt-get -y upgrade
+RUN		apt-get -y update
+RUN		apt-get -y upgrade
 
-RUN		apt-get -y install nginx\
-		openssl
+RUN		apt-get -y install nginx
+RUN		apt-get -y openssl
 
 RUN		openssl req -newkey rsa:4096 -days 365 -nodes -x509\
 		-subj "/C=KR/ST=Seoul/O=42Seoul/OU=42Seoul/CN=localhost"\

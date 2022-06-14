@@ -20,7 +20,6 @@ server {
 		fastcgi_index index.php;
 		# fastcgi_params = nginx 실행변수 설정 파일 -> PHP-fpm에 전달할 변수를 정의
 		include fastcgi_params;
-		# https://serverfault.com/questions/465607/nginx-document-rootfastcgi-script-name-vs-request-filename
 		fastcgi_param SCRIPT_FILENAME $document_root$fastcgi_script_name;
 	}
 }
