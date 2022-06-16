@@ -16,4 +16,4 @@ RUN		openssl req -newkey rsa:4096 -days 365 -nodes -x509\
 COPY	./conf/default	/etc/nginx/sites-available/default
 
 # nginx를 foreground로 실행
-CMD		["nginx", "-g", "daemon off;"]
+ENTRYPOINT	["nginx", "-g", "daemon off;"]

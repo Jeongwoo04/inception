@@ -21,4 +21,4 @@ COPY	./conf/www.conf	/etc/php/7.3/fpm/pool.d
 COPY	./conf/run.sh	/run.sh
 RUN chmod +x run.sh
 # wordpress.sh 실행
-CMD	/run.sh
+ENTRYPOINT [ "/run.sh" ]
