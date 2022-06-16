@@ -6,6 +6,7 @@ RUN	apt-get -y update &&\
 	apt-get -y install mariadb-server
 
 # Host에 위치한 파일을 container 내부 특정 dir로 복사
+RUN		echo "\ndaemon off;" >> /etc/mysql/mariadb.cnf
 COPY	conf/50-server.cnf	/etc/mysql/mariadb.conf.d/
 COPY	./tools/run.sh	/run.sh
 RUN		chmod +x run.sh
