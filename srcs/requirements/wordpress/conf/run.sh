@@ -1,5 +1,5 @@
 if [ ! -e /var/www/wordpress/wp-config.php ]; then
-# wp-config.php file 만들기 / --allow-root 관리자 권한 허용
+	# wp-config.php file 만들기 / --allow-root 관리자 권한 허용
 	mkdir -p /var/www/wordpress
 	wp core download --allow-root --version=5.9.1 --path='/var/www/wordpress'
 	chown -R www-data:www-data /var/www/wordpress
