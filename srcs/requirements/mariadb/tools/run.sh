@@ -17,5 +17,4 @@ if [ ! -d /var/lib/mysql/$WP_DB_NAME ]; then
 fi
 
 # mariadb foreground 실행 / background로 실행은 & 옵션 사용
-sleep 5
 exec mysqld_safe
