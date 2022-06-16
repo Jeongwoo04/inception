@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 #
 	### su -
 # sudo 설치

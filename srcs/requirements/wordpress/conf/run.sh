@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 
 if [ ! -e /var/www/wordpress/wp-config.php ]; then
 	# wp-config.php file 만들기 / --allow-root 관리자 권한 허용

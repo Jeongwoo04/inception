@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 # db 설정
 
 # dir 만들어져있지 않을때 실행

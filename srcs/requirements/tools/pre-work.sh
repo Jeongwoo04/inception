@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 
 sudo mkdir -p /home/jeson/data/wordpress
 sudo mkdir -p /home/jeson/data/mariadb
