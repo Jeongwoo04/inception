@@ -14,7 +14,7 @@ if [ ! -d /var/lib/mysql/$WP_DB_NAME ]; then
 	# 변경사항 적용
 	sleep 3
 	mysql -e "FLUSH PRIVILEGES;"
-	mysqladmin -u root -p $MYSQL_ROOT_PW shutdown
+	service mysql stop
 fi
 
 # mariadb foreground 실행 / background로 실행은 & 옵션 사용
