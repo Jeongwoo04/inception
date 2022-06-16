@@ -25,7 +25,7 @@ services:
       - .env
     depends_on:
       - mariadb
-    restart: on-failure
+    restart: always
 
   nginx:
     build: ./requirements/nginx
@@ -39,7 +39,7 @@ services:
       - .env
     depends_on:
       - wordpress
-    restart: on-failure
+    restart: always
 
 networks:
   inception:
