@@ -8,6 +8,6 @@ RUN	apt-get -y update &&\
 # Host에 위치한 파일을 container 내부 특정 dir로 복사
 COPY	conf/50-server.cnf	/etc/mysql/mariadb.conf.d/
 COPY	./tools/run.sh	/run.sh
-RUN		chmod +x run.sh
+RUN		chmod +x /run.sh
 # 복사한 run 실행
 ENTRYPOINT ["/run.sh"]

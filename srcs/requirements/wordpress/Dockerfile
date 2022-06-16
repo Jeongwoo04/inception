@@ -19,6 +19,6 @@ RUN	mv wp-cli.phar /usr/local/bin/wp
 COPY	./conf/www.conf	/etc/php/7.3/fpm/pool.d
 # config dir의 wordpress.sh 를 / 에 복사
 COPY	./conf/run.sh	/run.sh
-RUN chmod +x run.sh
+RUN chmod +x /run.sh
 # wordpress.sh 실행
 ENTRYPOINT ["/run.sh"]
