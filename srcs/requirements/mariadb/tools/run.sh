@@ -16,6 +16,6 @@ if [ ! -d /var/lib/mysql/$WP_DB_NAME ]; then
 	service mysql stop
 fi
 
-# sleep 3
+sleep 3
 # mariadb foreground 실행 / background로 실행은 & 옵션 사용
 exec mysqld_safe
