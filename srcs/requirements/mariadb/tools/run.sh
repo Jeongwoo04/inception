@@ -13,9 +13,9 @@ if [ ! -d /var/lib/mysql/$WP_DB_NAME ]; then
 	mysql -e "ALTER USER 'root'@'localhost' IDENTIFIED BY '$MYSQL_ROOT_PW';"
 	# 변경사항 적용
 	mysql -e "FLUSH PRIVILEGES;"
-	service mysql stop
+	mysqladmin -u root -p $MYSQL_ROOT_PW shutdown
 fi
 
-sleep 3
+# sleep 3
 # mariadb foreground 실행 / background로 실행은 & 옵션 사용
 exec mysqld_safe
