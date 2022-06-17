@@ -21,8 +21,4 @@ clean: down
 	sudo docker volume rm $$(sudo docker volume ls -q)
 	sudo rm -rf /home/jeson/data
 
-# ps : 컨테이너 목록 표시
-ps:
-	sudo docker-compose -f $(YML_DIR) ps
-
-.PHONY : all re stop down clean ps
+.PHONY : all re stop down clean
